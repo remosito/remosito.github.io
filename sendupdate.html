@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Leads - Location Updater</title>
+  </head>
+  <body onload="sendMessage()">
+	Your Location Data update has been sent. <br>Many thanks!
+	
+  </body>
+
+  <script>
+ 
+	const queryString = window.location.search;
+	console.log(queryString);
+	const urlParams = new URLSearchParams(queryString);
+	var pa = urlParams.get('a')
+	
+    function sendMessage() {
+      var request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/722214307370238005/_8RkXXwvQQ_LDsDD40_s-UR_X0sPdabmgkQ6ovMmQ8mYd9LzZbTGoIzuZeHkb-kay4VL");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        username: "rdlupdates",
+        avatar_url: "",
+        content: pa
+      }
+		console.log(JSON.stringify(params))
+      request.send(JSON.stringify(params));
+    }
+  </script>
+</html>
