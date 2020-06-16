@@ -6,7 +6,10 @@
     <title>Display Leads - Location Updater</title>
   </head>
   <body onload="sendMessage()">
-	Your Location Data update has been sent. <br>Many thanks!
+	The following Location Data update has been sent <br>
+	  
+	  
+	Many thanks!
 	
   </body>
 
@@ -28,6 +31,7 @@
         avatar_url: "",
         content: pa
       }
+      document.write(pa)
 		console.log(JSON.stringify(params))
       request.send(JSON.stringify(params));
     }
